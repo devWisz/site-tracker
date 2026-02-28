@@ -1,0 +1,20 @@
+body {
+  width: 420px;
+  margin: 0;
+  padding: 18px;
+  font-family: system-ui;
+  background: #f4f7fc;
+  color: #1f2937;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
