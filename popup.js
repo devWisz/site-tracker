@@ -55,3 +55,25 @@ function render() {
       openBtn.onclick = () => {
         chrome.tabs.create({ url: site.url });
       };
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "danger small";
+      deleteBtn.textContent = "Delete";
+      deleteBtn.onclick = () => {
+        if (confirm("If you delete the data will be lost. Continue?")) {
+          delete sites[key];
+          chrome.storage.local.set({ sites }, render);
+        }
+      };
+
+      actions.appendChild(openBtn);
+      actions.appendChild(deleteBtn);
+
+      card.appendChild(actions);
+      historyList.appendChild(card);
+    });
+
+    mostVisitedEl.textContent = maxSite;
+  });
+}
+
