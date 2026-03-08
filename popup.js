@@ -84,3 +84,59 @@ saveTabBtn.onclick = () => {
 
     const hostname = new URL(tab.url).hostname.replace("www.", "");
 
+    chrome.storage.local.get(["sites"], (data) => {
+      let sites = data.sites || {};
+
+      if (!sites[hostname]) {
+        sites[hostname] = {
+          name: extractName(tab.url),
+          url: tab.url,
+          visits: 0
+        };
+      }
+
+      chrome.storage.local.set({ sites }, render);
+    });
+  });
+};
+
+addManualBtn.onclick = () => {
+  if (!manualUrl.value) return;
+
+  let url = manualUrl.value.startsWith("http")
+    ? manualUrl.value
+    : "https://" + manualUrl.value;
+
+  const hostname = new URL(url).hostname.replace("www.", "");
+
+  chrome.storage.local.get(["sites"], (data) => {
+    let sites = data.sites || {};
+
+    sites[hostname] = {
+      name: extractName(url),
+      url: url,
+      visits: 0
+    };
+
+    chrome.storage.local.set({ sites }, () => {
+      manualUrl.value = "";
+      render();
+    });
+  });
+};
+
+toggleHistoryBtn.onclick = () => {
+  historySection.classList.toggle("hidden");
+  toggleHistoryBtn.textContent =
+    historySection.classList.contains("hidden")
+      ? "Show History"
+      : "Hide History";
+};
+
+resetBtn.onclick = () => {
+  if (confirm("This will clear all saved data. Continue?")) {
+    chrome.storage.local.clear(() => render());
+  }
+};
+
+document.addEventListener("DOMContentLoaded", render); 
