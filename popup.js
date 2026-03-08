@@ -77,3 +77,10 @@ function render() {
   });
 }
 
+saveTabBtn.onclick = () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const tab = tabs[0];
+    if (!tab.url.startsWith("http")) return;
+
+    const hostname = new URL(tab.url).hostname.replace("www.", "");
+

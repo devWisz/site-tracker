@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Site Tracker Extension",
+  "version": "2.0",
+  "description": "Track saved site visits with real engagement timing",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
