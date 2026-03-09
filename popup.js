@@ -28,9 +28,9 @@ function render() {
     let maxSite = "None";
 
     Object.keys(sites).forEach((key) => {
-      const site = sites[key];
+      const site = sites[key]; 
 
-      if (site.visits > maxVisits) {
+      if (site.visits > maxVisits) {  
         maxVisits = site.visits;
         maxSite = site.name + " (" + site.visits + ")";
       }
@@ -71,7 +71,7 @@ function render() {
 
       card.appendChild(actions);
       historyList.appendChild(card);
-    });
+    }); 
 
     mostVisitedEl.textContent = maxSite;
   });
