@@ -1,11 +1,11 @@
 const saveTabBtn = document.getElementById("saveTab");
-const toggleHistoryBtn = document.getElementById("toggleHistory");
+const toggleHistoryBtn = document.getElementById("toggleHistory"); 
 const resetBtn = document.getElementById("resetData");
 const manualUrl = document.getElementById("manualUrl");
 const addManualBtn = document.getElementById("addManual");
 
 
-const historySection = document.getElementById("historySection");
+const historySection = document.getElementById("historySection"); 
 const historyList = document.getElementById("historyList");
 
 const totalVisitsEl = document.getElementById("totalVisits");
@@ -37,7 +37,6 @@ function render() {
 
       const card = document.createElement("div");
       card.className = "site-card";
-
       card.innerHTML = `
         <div class="site-top">
           <div class="site-name">${site.name}</div>
@@ -121,8 +120,8 @@ addManualBtn.onclick = () => {
     chrome.storage.local.set({ sites }, () => {
       manualUrl.value = "";
       render();
-    });
-  });
+    });  
+  }); 
 };
 
 toggleHistoryBtn.onclick = () => {
@@ -139,4 +138,4 @@ resetBtn.onclick = () => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", render); 
+document.addEventListener("DOMContentLoaded", render);
