@@ -31,4 +31,4 @@ chrome.tabs.onRemoved.addListener((tabId) => {
   if (tabId === activeTabId && timer) {
     clearTimeout(timer);
   }
-});  
+}); 

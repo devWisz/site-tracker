@@ -7,50 +7,50 @@ The extension focuses on simplicity and speed, making it useful for productivity
 
 ## Features
 
-Track Total Visits  
+1.Track Total Visits  
 Keeps a count of how many times saved websites have been visited.
 
-Most Visited Site  
+2.Most Visited Site  
 Automatically identifies and displays the site you visit the most.
 
-Save Current Tab  
+3.Save Current Tab  
 Instantly save the website you are currently browsing.
 
-Manual Site Entry  
+4.Manual Site Entry  
 Add any website manually to your saved list.
 
-Visit Tracking  
+5.Visit Tracking  
 Counts a visit when you stay on a saved website for a few seconds.
 
-Saved History  
+6.Saved History  
 View all saved websites with their visit counts in one place.
 
-Quick Open  
+7.Quick Open  
 Open any saved website directly from the extension.
 
 Delete Sites  
 Remove specific sites from your saved list whenever you want.
 
-Reset Data  
+8.Reset Data  
 Clear all stored history and visit data instantly.
 
-Lightweight and Fast  
+9.Lightweight and Fast  
 Runs directly inside the extension popup without affecting browser performance.
 
 
 
 ## Use Cases
 
-Productivity Tracking  
+1.Productivity Tracking  
 Understand which websites consume most of your time.
 
-Quick Access Dashboard  
+2.Quick Access Dashboard  
 Keep frequently used tools, docs, or dashboards one click away.
 
-Learning and Research  
+3.Learning and Research  
 Track which documentation or learning sites you visit most.
 
-Focus Awareness  
+4.Focus Awareness  
 Identify browsing habits and improve how you spend time online.
 
 ## Installation
@@ -87,4 +87,4 @@ The Site Tracker extension will now appear in your browser toolbar.
 
 ## License
 
-Free to use and modify.
+Open source .Free to use and modify.

@@ -59,7 +59,7 @@ function render() {
       deleteBtn.className = "danger small";
       deleteBtn.textContent = "Delete";
       deleteBtn.onclick = () => {
-        if (confirm("If you delete the data will be lost. Continue?")) {
+        if (confirm("If you delete the data will be lost and cannot be recovered. Continue?")) {
           delete sites[key];
           chrome.storage.local.set({ sites }, render);
         }
@@ -128,14 +128,13 @@ toggleHistoryBtn.onclick = () => {
   historySection.classList.toggle("hidden");
   toggleHistoryBtn.textContent =
     historySection.classList.contains("hidden")
-      ? "Show History"
-      : "Hide History";
+      ? "Show my History"
+      : "Hide my History";
 };
-
 resetBtn.onclick = () => {
-  if (confirm("This will clear all saved data. Continue?")) {
+  if (confirm("This will clear all saved data and cannot be undone. Continue?")) {
     chrome.storage.local.clear(() => render());
   }
 };
 
-document.addEventListener("DOMContentLoaded", render);
+document.addEventListener("DOMContentLoaded", render);   

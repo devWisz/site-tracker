@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Site Tracker",
   "version": "2.0",
-  "description": "Tracking your sites and making your life easier",
+  "description": "Tracking your sites/tabs and making your life easier.",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["<all_urls>"],
   "background": {
