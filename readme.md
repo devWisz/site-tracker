@@ -28,13 +28,13 @@ View all saved websites with their visit counts in one place.
 7.Quick Open  
 Open any saved website directly from the extension.
 
-Delete Sites  
+8.Delete Sites  
 Remove specific sites from your saved list whenever you want.
 
-8.Reset Data  
+9.Reset Data  
 Clear all stored history and visit data instantly.
 
-9.Lightweight and Fast  
+10.Lightweight and Fast  
 Runs directly inside the extension popup without affecting browser performance.
 
 
@@ -57,7 +57,10 @@ Identify browsing habits and improve how you spend time online.
 
 You can download the extension from the Releases section.
 
-Download from here :
+Download from here(latest) :
+https://github.com/devWisz/site-tracker/releases/tag/site2
+
+Previous version : 
 https://github.com/devWisz/site-tracker/releases/tag/site
 
 
