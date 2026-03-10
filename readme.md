@@ -57,7 +57,8 @@ Identify browsing habits and improve how you spend time online.
 
 You can download the extension from the Releases section.
 
-Download here :
+Download from here :
+https://github.com/devWisz/site-tracker/releases/tag/site
 
 
 
