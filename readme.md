@@ -44,21 +44,24 @@ Runs directly inside the extension popup without affecting browser performance.
 
 ## Use Cases
 
-1.Productivity Tracking  
+1. Productivity Tracking  
 Understand which websites consume most of your time.
 
-2.Quick Access Dashboard  
+2. Quick Access Dashboard  
 Keep frequently used tools, docs, or dashboards one click away.
 
-3.Learning and Research  
+3. Learning and Research  
 Track which documentation or learning sites you visit most.
 
-4.Focus Awareness  
+4. Focus Awareness  
 Identify browsing habits and improve how you spend time online.
 
 ## Installation
 
 You can download the extension from the Releases section.
+
+Download from here(latest with Search link Feature) :
+https://github.com/devWisz/site-tracker/releases/tag/Update3
 
 Download from here(latest) :
 https://github.com/devWisz/site-tracker/releases/tag/site2
