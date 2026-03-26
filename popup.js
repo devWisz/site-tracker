@@ -1,11 +1,11 @@
 const saveTabBtn = document.getElementById("saveTab");
-const toggleHistoryBtn = document.getElementById("toggleHistory"); 
+const toggleHistoryBtn = document.getElementById("toggleHistory");
 const resetBtn = document.getElementById("resetData");
 const manualUrl = document.getElementById("manualUrl");
 const addManualBtn = document.getElementById("addManual");
+const searchInput = document.getElementById("searchInput");
 
-
-const historySection = document.getElementById("historySection"); 
+const historySection = document.getElementById("historySection");
 const historyList = document.getElementById("historyList");
 
 const totalVisitsEl = document.getElementById("totalVisits");
@@ -27,22 +27,34 @@ function render() {
     let maxVisits = 0;
     let maxSite = "None";
 
-    Object.keys(sites).forEach((key) => {
-      const site = sites[key]; 
+    let sortedSites = Object.entries(sites).sort((a, b) => b[1].visits - a[1].visits);
 
-      if (site.visits > maxVisits) {  
+    sortedSites.forEach(([key, site]) => {
+
+      if (searchInput.value && !site.name.includes(searchInput.value.toLowerCase())) return;
+
+      if (site.visits > maxVisits) {
         maxVisits = site.visits;
         maxSite = site.name + " (" + site.visits + ")";
       }
 
+      const percent = maxVisits ? (site.visits / maxVisits) * 100 : 0;
+
       const card = document.createElement("div");
       card.className = "site-card";
+
       card.innerHTML = `
         <div class="site-top">
-          <div class="site-name">${site.name}</div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <img class="site-favicon" src="https://www.google.com/s2/favicons?domain=${site.url}">
+            <div class="site-name">${site.name}</div>
+          </div>
           <div>Visits: ${site.visits}</div>
         </div>
         <div class="site-url">${site.url}</div>
+        <div class="site-progress">
+          <div class="site-progress-bar" style="width:${percent}%"></div>
+        </div>
       `;
 
       const actions = document.createElement("div");
@@ -51,30 +63,37 @@ function render() {
       const openBtn = document.createElement("button");
       openBtn.className = "secondary small";
       openBtn.textContent = "Open";
-      openBtn.onclick = () => {
-        chrome.tabs.create({ url: site.url });
+      openBtn.onclick = () => chrome.tabs.create({ url: site.url });
+
+      const resetCountBtn = document.createElement("button");
+      resetCountBtn.className = "secondary small";
+      resetCountBtn.textContent = "Reset Count";
+      resetCountBtn.onclick = () => {
+        site.visits = 0;
+        chrome.storage.local.set({ sites }, render);
       };
 
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "danger small";
       deleteBtn.textContent = "Delete";
       deleteBtn.onclick = () => {
-        if (confirm("If you delete the data will be lost and cannot be recovered. Continue?")) {
-          delete sites[key];
-          chrome.storage.local.set({ sites }, render);
-        }
+        delete sites[key];
+        chrome.storage.local.set({ sites }, render);
       };
 
       actions.appendChild(openBtn);
+      actions.appendChild(resetCountBtn);
       actions.appendChild(deleteBtn);
 
       card.appendChild(actions);
       historyList.appendChild(card);
-    }); 
+    });
 
     mostVisitedEl.textContent = maxSite;
   });
 }
+
+searchInput.addEventListener("input", render);
 
 saveTabBtn.onclick = () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -120,21 +139,20 @@ addManualBtn.onclick = () => {
     chrome.storage.local.set({ sites }, () => {
       manualUrl.value = "";
       render();
-    });  
-  }); 
+    });
+  });
 };
 
 toggleHistoryBtn.onclick = () => {
   historySection.classList.toggle("hidden");
   toggleHistoryBtn.textContent =
     historySection.classList.contains("hidden")
-      ? "Show my History"
-      : "Hide my History";
-};
-resetBtn.onclick = () => {
-  if (confirm("This will clear all saved data and cannot be undone. Continue?")) {
-    chrome.storage.local.clear(() => render());
-  }
+      ? "Show History"
+      : "Hide History";
 };
 
-document.addEventListener("DOMContentLoaded", render);   
+resetBtn.onclick = () => { 
+  chrome.storage.local.clear(() => render());
+};
+
+document.addEventListener("DOMContentLoaded", render);

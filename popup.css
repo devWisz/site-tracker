@@ -124,11 +124,38 @@ button.small {
 }
 
 .site-actions {
-  display: flex;
+  display: flex;  
   gap: 8px;
   margin-top: 6px;
 }
 
 .hidden {
   display: none;
+}   
+
+#searchInput {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+}
+
+.site-progress {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.site-progress-bar {
+  height: 100%;
+  background: #2563eb;
+  width: 0%;
+}
+
+.site-favicon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
 }

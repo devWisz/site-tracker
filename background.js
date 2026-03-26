@@ -23,7 +23,6 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
 
       chrome.storage.local.set({ sites, totalVisits });
     });
-
   }, 5000);
 });
 
