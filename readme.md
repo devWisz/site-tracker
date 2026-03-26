@@ -7,35 +7,38 @@ The extension focuses on simplicity and speed, making it useful for productivity
 
 ## Features
 
-1.Track Total Visits  
+1. Track Total Visits  
 Keeps a count of how many times saved websites have been visited.
 
-2.Most Visited Site  
+2. Most Visited Site  
 Automatically identifies and displays the site you visit the most.
 
-3.Save Current Tab  
+3. Save Current Tab  
 Instantly save the website you are currently browsing.
 
-4.Manual Site Entry  
+4. Manual Site Entry  
 Add any website manually to your saved list.
 
-5.Visit Tracking  
+5. Visit Tracking  
 Counts a visit when you stay on a saved website for a few seconds.
 
-6.Saved History  
+6. Saved History  
 View all saved websites with their visit counts in one place.
 
-7.Quick Open  
+7. Quick Open  
 Open any saved website directly from the extension.
 
-8.Delete Sites  
+8. Delete Sites  
 Remove specific sites from your saved list whenever you want.
 
-9.Reset Data  
+9. Reset Data  
 Clear all stored history and visit data instantly.
 
-10.Lightweight and Fast  
+10. Lightweight and Fast  
 Runs directly inside the extension popup without affecting browser performance.
+
+11. Search your links 
+ Search any your links you have visited before super smooth 
 
 
 
