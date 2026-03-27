@@ -5,6 +5,8 @@ It allows you to save websites, monitor visit counts, and quickly access frequen
 
 The extension focuses on simplicity and speed, making it useful for productivity and daily browsing habits.
 
+![alt text](<Screenshot 2026-03-26 140446.png>)
+
 ## Features
 
 1. Track Total Visits  
@@ -93,6 +95,9 @@ The Site Tracker extension will now appear in your browser toolbar.
 4. Click Show History to view saved websites and visit counts.
 5. Open any saved site directly from the extension.
 6. Reset all stored data anytime using Reset All.
+
+Inspiration : 
+My screen time in the phone had hit me so i thought why not to track in the laptop so I had to make this anyway.
 
 ## License
 
