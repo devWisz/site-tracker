@@ -8,7 +8,7 @@ The extension focuses on simplicity and speed, making it useful for productivity
 ![alt text](<Screenshot 2026-03-26 140446.png>)
 
 New changes : 
-1. User can search their own links.
+1. User can search their own links (their previous visit sites).
 2. Better UI changes.
 3. More tested version.
 
